@@ -1,0 +1,74 @@
+# Tezos mainnet Octez RPC node — serves REST APIs from TEZOSSpec.json
+# Docs: https://docs.tezos.com/developing | https://octez.tezos.com/docs/introduction/howtoget.html
+
+services:
+  node:
+    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+    container_name: ${CONTAINER_NAME:-tezos-mainnet-rpc}
+    hostname: tezos-mainnet-rpc
+    command:
+      - octez-node
+      - run
+      - --data-dir
+      - /var/run/tezos/node/data
+    ports:
+      - "${RPC_PORT:-8732}:8732"
+      - "${P2P_PORT:-9732}:9732"
+    volumes:
+      - ./node_data:/var/run/tezos/node
+      - ./client_data:/var/run/tezos/client
+      - ./TEZOSSpec.json:/spec/TEZOSSpec.json:ro
+    environment:
+      TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER: "Y"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -sf http://127.0.0.1:8732/version >/dev/null && curl -sf http://127.0.0.1:8732/chains/main/chain_id | grep -q NetXdQprcVkpaWU",
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 300s
+
+  # One-shot: initialize node config (run scripts/init-node.sh)
+  init:
+    profiles: [setup]
+    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+    volumes:
+      - ./node_data:/var/run/tezos/node
+      - ./client_data:/var/run/tezos/client
+    entrypoint:
+      - octez-node
+      - config
+      - init
+      - --network
+      - mainnet
+      - --data-dir
+      - /var/run/tezos/node/data
+      - --history-mode
+      - ${HISTORY_MODE:-full}
+      - --rpc-addr
+      - "[::]:8732"
+      - --allow-all-rpc
+      - "[::]:8732"
+      - --connections
+      - "${CONNECTIONS:-50}"
+    restart: "no"
+
+  # One-shot: import rolling/full/archive snapshot (run scripts/import-snapshot.sh)
+  import-snapshot:
+    profiles: [setup]
+    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+    volumes:
+      - ./node_data:/var/run/tezos/node
+      - ${SNAPSHOT_FILE:-./snapshots/mainnet.snapshot}:/snapshot:ro
+    entrypoint:
+      - octez-node
+      - snapshot
+      - import
+      - --data-dir
+      - /var/run/tezos/node/data
+      - /snapshot
+    restart: "no"

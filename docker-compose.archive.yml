@@ -1,0 +1,24 @@
+# Archive history mode override (TEZOSSpec "archive" extension).
+# Usage:
+#   HISTORY_MODE=archive SNAPSHOT_URL=<archive snapshot url> ./scripts/init-node.sh
+#   ./scripts/import-snapshot.sh
+#   docker compose -f docker-compose.yml -f docker-compose.archive.yml up -d
+
+services:
+  init:
+    entrypoint:
+      - octez-node
+      - config
+      - init
+      - --network
+      - mainnet
+      - --data-dir
+      - /var/run/tezos/node/data
+      - --history-mode
+      - archive
+      - --rpc-addr
+      - "[::]:8732"
+      - --allow-all-rpc
+      - "[::]:8732"
+      - --connections
+      - "${CONNECTIONS:-50}"

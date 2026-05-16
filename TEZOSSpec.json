@@ -1,0 +1,5051 @@
+{
+    "Spec": {
+      "index": "TEZOS",
+      "name": "tezos mainnet",
+      "enabled": true,
+      "reliability_threshold": 268435455,
+      "data_reliability_enabled": true,
+      "block_distance_for_finalized_data": 2,
+      "blocks_in_finalization_proof": 3,
+      "average_block_time": "6000",
+      "allowed_block_lag_for_qos_sync": "2",
+      "block_last_updated": "5079391",
+      "min_stake_provider": {
+        "denom": "ulava",
+        "amount": "5000000000"
+      },
+      "providers_types": "dynamic",
+      "imports": [],
+      "api_collections": [
+        {
+          "enabled": true,
+          "collection_data": {
+            "api_interface": "rest",
+            "internal_path": "",
+            "type": "GET",
+            "add_on": ""
+          },
+          "apis": [
+            {
+              "enabled": true,
+              "name": "/version",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/chain_id",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/is_bootstrapped",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/levels/checkpoint",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/levels/savepoint",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/levels/caboose",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/active_peers_heads",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/invalid_blocks",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/invalid_blocks/{block_hash}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/protocols",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/protocols/{Protocol_hash}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/protocols",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/protocols/{Protocol_hash}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/protocols/{Protocol_hash}/environment",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/header",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/header/shell",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/header/protocol_data",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/header/raw",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/header/protocol_data/raw",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/hash",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/protocols",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/metadata",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_hashes",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operations/{list_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operations/{list_offset}/{operation_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_hashes/{list_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_hashes/{list_offset}/{operation_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_metadata_hashes",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_metadata_hashes/{list_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operation_metadata_hashes/{list_offset}/{operation_offset}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/operations_metadata_hash",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/metadata_hash",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/resulting_context_hash",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/live_blocks",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/constants",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/constants/errors",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/constants/parametric",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/counter",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/storage",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/script",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/manager_key",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/delegate",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/spendable",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/full_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/staked_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/frozen_bonds",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/balance_and_frozen_bonds",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/unstake_requests",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/unstaked_finalizable_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/unstaked_frozen_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/storage/normalized",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/entrypoints",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/entrypoints/{entrypoint}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/staking_numerator",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/estimated_own_pending_slashed_amount",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/spendable_and_frozen_bonds",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/all_ticket_balances",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/single_sapling_get_diff",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/storage/paid_space",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/storage/used_space",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/voting_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/baking_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/current_voting_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/full_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/own_full_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/frozen_deposits",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/participation",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/denunciations",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/delegators",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/delegated_contracts",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/stakers",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/total_delegated",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/deactivated",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/grace_period",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/consensus_key",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/dal_participation",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/active_staking_parameters",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/pending_staking_parameters",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/frozen_deposits_limit",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/companion_key",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/current_baking_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/current_frozen_deposits",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/delegated_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/staking_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/staking_denominator",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/external_delegated",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/external_staked",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/own_delegated",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/own_staked",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/total_staked",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/total_delegated_stake",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/total_unstaked_per_cycle",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/unstaked_frozen_deposits",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/voting_info",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/is_forbidden",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/min_delegated_in_current_cycle",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/delegates/{pkh}/estimated_shared_pending_slashed_amount",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/big_maps/{big_map_id}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/big_maps/{big_map_id}/{script_expr}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/sapling/{sapling_state_id}/get_diff",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/big_maps/{big_map_id}/{script_expr}/normalized",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/raw/json/{path}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/raw/bytes/{path}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/total_supply",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/total_currently_staked",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/total_frozen_stake",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/issuance/current_yearly_rate",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/issuance/current_yearly_rate_details",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/issuance/current_yearly_rate_exact",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/issuance/expected_issuance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/issuance/issuance_per_minute",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/dal/commitments_history",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/dal/published_slot_headers",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/dal/shards",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/dal/skip_list_cells_of_level",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/adaptive_issuance_launch_cycle",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/denunciations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/seed",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/seed_computation",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/nonces/{block_level}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/protocol/first_level",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/liquidity_baking/cpmm_address",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/all",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/all/inbox",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/genesis_info",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/last_cemented_commitment_hash_with_level",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/kind",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/commitment/{smart_rollup_commitment_hash}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/commitment/{smart_rollup_commitment_hash}/can_be_cemented",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/commitment/{smart_rollup_commitment_hash}/stakers_indexes",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/consumed_outputs/{block_level}",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/inbox_level/{block_level}/commitments",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/whitelist",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/last_whitelist_update",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/stakers",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker/{pkh}/index",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker/{pkh}/conflicts",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker/{pkh}/games",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker/{pkh}/staked_on_commitment",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker1/{staker1_pkh}/staker2/{staker2_pkh}/timeout",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/staker1/{staker1_pkh}/staker2/{staker2_pkh}/timeout_reached",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/proposals",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/proposal_count/{pkh}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/current_period",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/current_quorum",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/listings",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/ballots",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/ballot_list",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/current_proposal",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/successor_period",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/votes/total_voting_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/baking_rights",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/attestation_rights",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/current_level",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/validators",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/levels_in_current_cycle",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/round",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/complete/{prefix}",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/total_baking_power",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/baking_power_distribution_for_current_cycle",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/consecutive_round_zero",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/all_bakers_attest_activation_level",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/tz4_baker_number_ratio",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/mempool/pending_operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/mempool/monitor_operations",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/heads/{chain_id}",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/bootstrapped",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/active_chains",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/applied_blocks",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/protocols",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/received_blocks/{chain_id}",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/monitor/validated_blocks",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": true,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": true
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "60000",
+              "parsers": []
+            }
+          ],
+          "headers": [],
+          "inheritance_apis": [],
+          "parse_directives": [
+            {
+              "function_tag": "GET_BLOCKNUM",
+              "function_template": "/chains/main/blocks/head/header",
+              "result_parsing": {
+                "parser_arg": [
+                  "0",
+                  "level"
+                ],
+                "parser_func": "PARSE_CANONICAL",
+                "default_value": "",
+                "encoding": ""
+              },
+              "api_name": "/chains/main/blocks/head/header",
+              "parsers": []
+            },
+            {
+              "function_tag": "GET_BLOCK_BY_NUM",
+              "function_template": "/chains/main/blocks/%d/header",
+              "result_parsing": {
+                "parser_arg": [
+                  "0",
+                  "hash"
+                ],
+                "parser_func": "PARSE_CANONICAL",
+                "default_value": "",
+                "encoding": ""
+              },
+              "api_name": "/chains/main/blocks/{block_id}/header",
+              "parsers": []
+            },
+            {
+              "function_tag": "GET_EARLIEST_BLOCK",
+              "function_template": "/chains/main/levels/savepoint",
+              "result_parsing": {
+                "parser_arg": [
+                  "0",
+                  "level"
+                ],
+                "parser_func": "PARSE_CANONICAL",
+                "default_value": "",
+                "encoding": ""
+              },
+              "api_name": "/chains/main/levels/savepoint",
+              "parsers": []
+            }
+          ],
+          "extensions": [
+            {
+              "name": "archive",
+              "rule": {
+                "block": "28000"
+              },
+              "cu_multiplier": "5"
+            }
+          ],
+          "verifications": [
+            {
+              "name": "chain-id",
+              "parse_directive": {
+                "function_tag": "VERIFICATION",
+                "function_template": "/chains/main/blocks/head/header",
+                "result_parsing": {
+                  "parser_arg": [
+                    "0",
+                    "chain_id"
+                  ],
+                  "parser_func": "PARSE_CANONICAL",
+                  "default_value": "",
+                  "encoding": ""
+                },
+                "api_name": "/chains/main/blocks/head/header",
+                "parsers": []
+              },
+              "values": [
+                {
+                  "extension": "",
+                  "expected_value": "NetXdQprcVkpaWU",
+                  "latest_distance": "0",
+                  "severity": "Fail"
+                }
+              ]
+            },
+            {
+              "name": "pruning",
+              "parse_directive": {
+                "function_tag": "GET_EARLIEST_BLOCK",
+                "function_template": "",
+                "result_parsing": {
+                  "parser_arg": [],
+                  "parser_func": "EMPTY",
+                  "default_value": "",
+                  "encoding": ""
+                },
+                "api_name": "",
+                "parsers": []
+              },
+              "values": [
+                {
+                  "extension": "",
+                  "expected_value": "",
+                  "latest_distance": "28000",
+                  "severity": "Fail"
+                },
+                {
+                  "extension": "archive",
+                  "expected_value": "0",
+                  "latest_distance": "0",
+                  "severity": "Fail"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "enabled": true,
+          "collection_data": {
+            "api_interface": "rest",
+            "internal_path": "",
+            "type": "POST",
+            "add_on": ""
+          },
+          "apis": [
+            {
+              "enabled": true,
+              "name": "/injection/operation",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 1,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/injection/block",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 1,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/forge/operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/preapply/operations",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/preapply/block",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/run_operation",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/simulate_operation",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/run_code",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/trace_code",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/typecheck_code",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/pack_data",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/entrypoint",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/entrypoints",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/run_view",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/run_script_view",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/script_size",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/forge_block_header",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/forge/protocol_data",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/forge/signed_operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/forge/bls_consensus_operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/parse/block",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/parse/operations",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/normalize_data",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/normalize_script",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/normalize_stack",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/normalize_type",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/run_instruction",
+              "compute_units": "60",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/helpers/scripts/typecheck_data",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/injection/protocol",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": false,
+                "local": false,
+                "subscription": false,
+                "stateful": 1,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/ticket_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/contracts/{contract_id}/script/normalized",
+              "compute_units": "20",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            },
+            {
+              "enabled": true,
+              "name": "/chains/main/blocks/{block_id}/context/smart_rollups/smart_rollup/{smart_rollup_address}/ticket_balance",
+              "compute_units": "10",
+              "extra_compute_units": "0",
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0,
+                "hanging_api": false
+              },
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT",
+                "default_value": "",
+                "encoding": ""
+              },
+              "timeout_ms": "0",
+              "parsers": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "content-type",
+              "kind": "pass_send",
+              "function_tag": "DISABLED",
+              "value": ""
+            }
+          ],
+          "inheritance_apis": [],
+          "parse_directives": [],
+          "extensions": [],
+          "verifications": []
+        }
+      ],
+      "contributor": [],
+      "contributor_percentage": null,
+      "shares": "1",
+      "identity": ""
+    }
+  }

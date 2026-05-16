@@ -1,0 +1,6 @@
+.env
+node_data/
+client_data/
+snapshots/
+*.snapshot
+*.log
