@@ -22,3 +22,4 @@ services:
       - "[::]:8732"
       - --connections
       - "${CONNECTIONS:-50}"
+      - --private-mode

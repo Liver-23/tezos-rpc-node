@@ -16,7 +16,7 @@ The spec expects mainnet chain id `NetXdQprcVkpaWU` and optional **archive** ext
 - `node_data/` and `client_data/` must be writable by container user **1000** (`tezos`); `init-node.sh` sets this automatically
 - **Disk**: ~100 GB+ SSD for `rolling`/`full`; **2 TB+** for `archive`
 - **RAM**: 8 GB minimum (16 GB recommended)
-- Open **9732/tcp** (P2P) if peers must reach this host
+- Open **9732/tcp** (Tezos P2P) if peers must reach this host; RPC is bound to **127.0.0.1:8732** by default
 
 ## Quick start
 
@@ -93,7 +93,10 @@ docker compose up -d node
 
 ## Security
 
-This configuration exposes the **full** node RPC (`--allow-all-rpc`). Do not publish port 8732 to the public internet without a reverse proxy, firewall, and rate limits. Prefer binding RPC to localhost and tunneling for production.
+- **RPC** is published on `127.0.0.1:8732` only (set `RPC_BIND` in `.env` to change).
+- **`--private-mode`** reduces P2P gossip exposure (RPC-only operation).
+- **`--allow-all-rpc`** is still enabled inside the container for TEZOSSpec POST APIs; put a reverse proxy in front if you expose RPC externally.
+- Tezos uses ports **8732/9732**, not Substrate **30333/30334** — unrelated to Polkadot netscan reports.
 
 ## References
 
