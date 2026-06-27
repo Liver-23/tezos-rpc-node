@@ -1,6 +1,8 @@
 .env
 node_data/
 client_data/
+testnet_node_data/
+testnet_client_data/
 snapshots/
 *.snapshot
 *.log

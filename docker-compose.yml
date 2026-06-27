@@ -1,47 +1,85 @@
-# Tezos mainnet Octez RPC node — serves REST APIs from TEZOSSpec.json
+# Tezos Octez RPC nodes — mainnet (default) and testnet (Shadownet, --profile testnet)
 # Docs: https://docs.tezos.com/developing | https://octez.tezos.com/docs/introduction/howtoget.html
 #
 # Security: RPC is published on localhost only (use a reverse proxy for external access).
-# P2P stays on 9732 for Tezos sync; --private-mode limits gossip (not Substrate-style scanning).
+# P2P uses distinct host ports per network; --private-mode limits gossip.
+#
+# Start mainnet only (default, unchanged):
+#   docker compose up -d
+# Start testnet only:
+#   docker compose --profile testnet up -d testnet-node
+# Start both:
+#   docker compose --profile testnet up -d
+# Or set COMPOSE_PROFILES=testnet in .env to always enable testnet with mainnet.
+
+x-node-common: &node-common
+  image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+  command:
+    - octez-node
+    - run
+    - --data-dir
+    - /var/run/tezos/node/data
+    - --private-mode
+  environment:
+    TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER: "Y"
+  restart: unless-stopped
+
+x-init-common: &init-common
+  image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+  entrypoint:
+    - octez-node
+    - config
+    - init
+    - --data-dir
+    - /var/run/tezos/node/data
+    - --rpc-addr
+    - "[::]:8732"
+    - --allow-all-rpc
+    - "[::]:8732"
+    - --connections
+    - "${CONNECTIONS:-50}"
+    - --private-mode
+  restart: "no"
+
+x-import-common: &import-common
+  image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+  entrypoint:
+    - octez-node
+    - snapshot
+    - import
+    - --data-dir
+    - /var/run/tezos/node/data
+    - --force
+  restart: "no"
 
 services:
+  # --- Mainnet (no profile — started by default) --------------------------------
+
   node:
-    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
+    <<: *node-common
     container_name: ${CONTAINER_NAME:-tezos-mainnet-rpc}
     hostname: tezos-mainnet-rpc
-    command:
-      - octez-node
-      - run
-      - --data-dir
-      - /var/run/tezos/node/data
-      - --private-mode
     ports:
-      # RPC: localhost only — not exposed on 0.0.0.0
       - "${RPC_BIND:-127.0.0.1}:${RPC_PORT:-8732}:8732"
-      # P2P: Tezos mainnet peer port (9732, not Substrate 30333/30334)
       - "${P2P_BIND:-0.0.0.0}:${P2P_PORT:-9732}:9732"
     volumes:
       - ./node_data:/var/run/tezos/node
       - ./client_data:/var/run/tezos/client
       - ./TEZOSSpec.json:/spec/TEZOSSpec.json:ro
-    environment:
-      TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER: "Y"
-    restart: unless-stopped
     healthcheck:
       test:
         [
           "CMD-SHELL",
-          "curl -sf http://127.0.0.1:8732/version >/dev/null && curl -sf http://127.0.0.1:8732/chains/main/chain_id | grep -q NetXdQprcVkpaWU",
+          "wget -qO- http://127.0.0.1:8732/version >/dev/null && wget -qO- http://127.0.0.1:8732/chains/main/chain_id | grep -q ${MAINNET_CHAIN_ID:-NetXdQprcVkpaWU}",
         ]
       interval: 30s
       timeout: 15s
       retries: 5
       start_period: 300s
 
-  # One-shot: initialize node config (run scripts/init-node.sh)
   init:
+    <<: *init-common
     profiles: [setup]
-    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
     volumes:
       - ./node_data:/var/run/tezos/node
       - ./client_data:/var/run/tezos/client
@@ -62,12 +100,10 @@ services:
       - --connections
       - "${CONNECTIONS:-50}"
       - --private-mode
-    restart: "no"
 
-  # One-shot: import rolling/full/archive snapshot (run scripts/import-snapshot.sh)
   import-snapshot:
+    <<: *import-common
     profiles: [setup]
-    image: ${OCTEZ_IMAGE:-tezos/tezos-bare:latest}
     volumes:
       - ./node_data:/var/run/tezos/node
       - ${SNAPSHOT_FILE:-./snapshots/mainnet.snapshot}:/snapshot:ro
@@ -77,5 +113,68 @@ services:
       - import
       - --data-dir
       - /var/run/tezos/node/data
+      - --force
       - /snapshot
-    restart: "no"
+
+  # --- Testnet / Shadownet (--profile testnet) ----------------------------------
+
+  testnet-node:
+    <<: *node-common
+    profiles: [testnet]
+    container_name: ${TESTNET_CONTAINER_NAME:-tezos-testnet-rpc}
+    hostname: tezos-testnet-rpc
+    ports:
+      - "${TESTNET_RPC_BIND:-127.0.0.1}:${TESTNET_RPC_PORT:-8733}:8732"
+      - "${TESTNET_P2P_BIND:-0.0.0.0}:${TESTNET_P2P_PORT:-9733}:9732"
+    volumes:
+      - ./testnet_node_data:/var/run/tezos/node
+      - ./testnet_client_data:/var/run/tezos/client
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -qO- http://127.0.0.1:8732/version >/dev/null && wget -qO- http://127.0.0.1:8732/chains/main/chain_id | grep -q ${TESTNET_CHAIN_ID:-NetXsqzbfFenSTS}",
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 300s
+
+  testnet-init:
+    <<: *init-common
+    profiles: [testnet, setup]
+    volumes:
+      - ./testnet_node_data:/var/run/tezos/node
+      - ./testnet_client_data:/var/run/tezos/client
+    entrypoint:
+      - octez-node
+      - config
+      - init
+      - --network
+      - ${TESTNET_NETWORK:-https://teztnets.com/shadownet}
+      - --data-dir
+      - /var/run/tezos/node/data
+      - --history-mode
+      - ${TESTNET_HISTORY_MODE:-rolling}
+      - --rpc-addr
+      - "[::]:8732"
+      - --allow-all-rpc
+      - "[::]:8732"
+      - --connections
+      - "${TESTNET_CONNECTIONS:-50}"
+      - --private-mode
+
+  testnet-import-snapshot:
+    <<: *import-common
+    profiles: [testnet, setup]
+    volumes:
+      - ./testnet_node_data:/var/run/tezos/node
+      - ${TESTNET_SNAPSHOT_FILE:-./snapshots/testnet.snapshot}:/snapshot:ro
+    entrypoint:
+      - octez-node
+      - snapshot
+      - import
+      - --data-dir
+      - /var/run/tezos/node/data
+      - --force
+      - /snapshot

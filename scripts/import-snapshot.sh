@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Download (optional) and import a mainnet snapshot for faster bootstrap.
+# Download (optional) and import a snapshot for mainnet or testnet (Shadownet).
+# Usage: ./scripts/import-snapshot.sh [mainnet|testnet]
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -12,26 +13,25 @@ if [[ -f .env ]]; then
   set +a
 fi
 
-TEZOS_UID="${TEZOS_UID:-1000}"
-TEZOS_GID="${TEZOS_GID:-1000}"
-
-SNAPSHOT_FILE="${SNAPSHOT_FILE:-./snapshots/mainnet.snapshot}"
-SNAPSHOT_URL="${SNAPSHOT_URL:-https://snapshots.tzinit.org/mainnet/rolling}"
 ARIA2_CONNECTIONS="${ARIA2_CONNECTIONS:-16}"
 ARIA2_SPLIT="${ARIA2_SPLIT:-16}"
 
-if [[ "${HISTORY_MODE:-full}" == "archive" ]]; then
-  SNAPSHOT_URL="${SNAPSHOT_URL_ARCHIVE:-$SNAPSHOT_URL}"
-fi
+# shellcheck disable=SC1091
+source "$ROOT/scripts/lib/network.sh"
+load_network "${1:-mainnet}"
 
-mkdir -p "$(dirname "$SNAPSHOT_FILE")" node_data client_data
-chown -R "${TEZOS_UID}:${TEZOS_GID}" node_data client_data 2>/dev/null || true
+ensure_data_dirs
+mkdir -p "$(dirname "$SNAPSHOT_FILE")"
+
+echo "[$NETWORK] Stopping node before snapshot import..."
+"${COMPOSE[@]}" stop "$COMPOSE_SERVICE_NODE" 2>/dev/null || true
+rm -f "$NODE_DATA_DIR/data/lock"
 
 download_snapshot() {
   local url="$1" dest="$2"
 
   if [[ -s "$dest" ]]; then
-    echo "Using existing snapshot: $dest"
+    echo "[$NETWORK] Using existing snapshot: $dest"
     return 0
   fi
 
@@ -44,7 +44,7 @@ download_snapshot() {
   dest_dir="$(cd "$(dirname "$dest")" && pwd)"
   dest_name="$(basename "$dest")"
 
-  echo "Downloading snapshot with aria2c from $url ..."
+  echo "[$NETWORK] Downloading snapshot with aria2c from $url ..."
   aria2c \
     -d "$dest_dir" \
     -o "$dest_name" \
@@ -59,13 +59,14 @@ download_snapshot() {
 
 download_snapshot "$SNAPSHOT_URL" "$SNAPSHOT_FILE"
 
-COMPOSE=(docker compose -f docker-compose.yml)
-if [[ "${HISTORY_MODE:-full}" == "archive" ]]; then
-  COMPOSE+=(-f docker-compose.archive.yml)
+if [[ "$NETWORK" == "mainnet" ]]; then
+  export SNAPSHOT_FILE
+else
+  export TESTNET_SNAPSHOT_FILE="$SNAPSHOT_FILE"
 fi
 
-export SNAPSHOT_FILE
-echo "Importing snapshot (this can take a long time)..."
-"${COMPOSE[@]}" --profile setup run --rm import-snapshot
+echo "[$NETWORK] Importing snapshot (--force cleans context, store, daily_logs)..."
+echo "[$NETWORK] This can take a long time."
+"${COMPOSE[@]}" --profile setup run --rm "$COMPOSE_SERVICE_IMPORT"
 
-echo "Import finished. Start the node: docker compose up -d"
+echo "[$NETWORK] Import finished. Start with: ./scripts/up.sh $NETWORK"
