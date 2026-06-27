@@ -55,7 +55,9 @@ cp .env.example .env   # if not done yet
 # 1) Initialize testnet config
 ./scripts/init-node.sh testnet
 
-# 2) Import a Shadownet snapshot (strongly recommended)
+# 2) Import a snapshot (strongly recommended)
+#    rolling/full: ./scripts/import-snapshot.sh testnet
+#    full:50 (TEZOSSpec 28k-block pruning): set TESTNET_HISTORY_MODE=full:50 then:
 ./scripts/import-snapshot.sh testnet
 
 # 3) Run testnet only
@@ -67,6 +69,23 @@ docker compose exec testnet-node octez-client -E http://127.0.0.1:8732 bootstrap
 ```
 
 Testnet RPC from the host: `http://127.0.0.1:8733` (chain id `NetXsqzbfFenSTS`).
+
+### Testnet history mode vs TEZOSSpec
+
+| Mode | Disk (Shadownet) | TEZOSSpec pruning (28k blocks) |
+|------|------------------|----------------------------------|
+| `rolling` | ~1 GB | Fails — blocks pruned |
+| `full` | ~20 GB | May fail — only ~2 cycles of context (~16k blocks) |
+| `full:50` | ~80 GB | Passes — 50+ cycles of context (~400k+ blocks) |
+
+Restore `full:50` from tzinit tar.lz4 (not snapshot import):
+
+```bash
+# In .env: TESTNET_HISTORY_MODE=full:50
+docker compose --profile testnet stop testnet-node
+./scripts/import-full50.sh testnet
+./scripts/up.sh testnet
+```
 
 ## Running mainnet and testnet together
 

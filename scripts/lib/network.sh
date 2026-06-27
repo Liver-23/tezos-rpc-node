@@ -49,6 +49,8 @@ load_network() {
       HISTORY_MODE="${TESTNET_HISTORY_MODE:-rolling}"
       SNAPSHOT_FILE="${TESTNET_SNAPSHOT_FILE:-./snapshots/testnet.snapshot}"
       SNAPSHOT_URL="${TESTNET_SNAPSHOT_URL:-https://snapshots.tzinit.org/shadownet/rolling}"
+      FULL50_FILE="${TESTNET_FULL50_FILE:-./snapshots/testnet-full50.tar.lz4}"
+      FULL50_URL="${TESTNET_FULL50_URL:-https://snapshots.tzinit.org/shadownet/full50.tar.lz4}"
       RPC_URL="${TESTNET_RPC_URL:-http://127.0.0.1:${TESTNET_RPC_PORT:-8733}}"
       CHAIN_ID="${TESTNET_CHAIN_ID:-NetXsqzbfFenSTS}"
       ;;
